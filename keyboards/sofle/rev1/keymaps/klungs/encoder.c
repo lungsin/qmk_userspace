@@ -6,6 +6,5 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [3] = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI),           ENCODER_CCW_CW(RGB_RMOD, RGB_MOD)},
     [4] = { ENCODER_CCW_CW(_______, _______),           ENCODER_CCW_CW(_______, _______) },
     [5] = { ENCODER_CCW_CW(_______, _______),           ENCODER_CCW_CW(_______, _______) },
-    [6] = { ENCODER_CCW_CW(_______, _______),           ENCODER_CCW_CW(_______, _______) },
 };
 #endif

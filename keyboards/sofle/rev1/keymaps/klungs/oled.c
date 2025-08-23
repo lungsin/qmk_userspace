@@ -12,15 +12,17 @@
 #        include "ocean_dream.h"
 #    endif
 
+#    include "config.h"
+
 static void print_status_narrow(void) {
     // Print current mode
     oled_write_P(PSTR("\n\n"), false);
 
     switch (get_highest_layer(default_layer_state)) {
-        case 0: // _QWERTY
+        case _QWERTY: // _QWERTY
             oled_write_ln_P(PSTR("Qwrt\n"), false);
             break;
-        case 1: // _COLEMAK
+        case _KLUNGSMAK: // _KLUNGSMAK
             oled_write_ln_P(PSTR("Klng\n"), false);
             break;
         default:
@@ -31,23 +33,20 @@ static void print_status_narrow(void) {
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case 0: // _QWERTY
-        case 1: // _COLEMAK
+        case _QWERTY:
+        case _KLUNGSMAK:
             oled_write_P(PSTR("Base\n"), false);
             break;
-        case 2:
-            oled_write_P(PSTR("Sym1\n"), false);
+        case _SYMBOL:
+            oled_write_P(PSTR("Sym\n"), false);
             break;
-        case 3:
-            oled_write_P(PSTR("Sym2\n"), false);
+        case _NAVIGATION:
+            oled_write_P(PSTR("Nav\n"), false);
             break;
-        case 4:
-            oled_write_P(PSTR("Ext\n"), false);
-            break;
-        case 5:
+        case _NUMPAD:
             oled_write_P(PSTR("Num"), false);
             break;
-        case 6:
+        case _FN:
             oled_write_P(PSTR("Fn"), false);
             break;
         default:
