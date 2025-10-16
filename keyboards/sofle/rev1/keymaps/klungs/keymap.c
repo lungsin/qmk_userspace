@@ -4,7 +4,7 @@
 #include QMK_KEYBOARD_H
 
 #include "encoder.c"
-#include "config.h"
+#include "layer.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //        ┌──────┬───┬──────┬──────┬──────┬─────────────┐                    ┌─────────────────┬──────┬──────┬──────┬───┬──────┐
@@ -64,21 +64,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,     KC_TRNS , MO(_NUMPAD) , KC_TRNS , KC_TRNS , KC_TRNS
 ),
 
-//        ┌──────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┐               ┌──────┬────────────┬──────┬────────────┬──────┬──────┐
-//        │      │               │               │               │               │               │               │      │            │      │            │      │      │
-//        ├──────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤               ├──────┼────────────┼──────┼────────────┼──────┼──────┤
-//        │      │      esc      │  LALT(left)   │    LCTL(f)    │  LALT(rght)   │      ins      │               │ pgup │ LCTL(left) │  up  │ LCTL(rght) │ bspc │ bspc │
-//        ├──────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤               ├──────┼────────────┼──────┼────────────┼──────┼──────┤
-//        │ caps │ OSM(MOD_LSFT) │ OSM(MOD_LGUI) │ OSM(MOD_LALT) │ OSM(MOD_LCTL) │ OSM(MOD_RALT) │               │ pgdn │    left    │ down │    rght    │ ent  │ bspc │
-//        ├──────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼─────┐   ┌─────┼──────┼────────────┼──────┼────────────┼──────┼──────┤
-//        │      │    LCTL(z)    │    LCTL(x)    │    LCTL(c)    │    LCTL(v)    │     lgui      │     │   │     │ caps │    home    │ pscr │    end     │ del  │      │
-//        └──────┴───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼─────┤   ├─────┼──────┼────────────┼──────┼────────────┼──────┴──────┘
+//        ┌──────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────┐               ┌──────┬────────────┬──────┬────────────┬──────┬─────┐
+//        │      │               │               │               │               │               │               │      │            │      │            │      │     │
+//        ├──────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤               ├──────┼────────────┼──────┼────────────┼──────┼─────┤
+//        │      │      esc      │  LALT(left)   │    LCTL(f)    │  LALT(rght)   │      ins      │               │ pgup │ LCTL(left) │  up  │ LCTL(rght) │ bspc │  |  │
+//        ├──────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤               ├──────┼────────────┼──────┼────────────┼──────┼─────┤
+//        │ caps │ OSM(MOD_LSFT) │ OSM(MOD_LGUI) │ OSM(MOD_LALT) │ OSM(MOD_LCTL) │ OSM(MOD_RALT) │               │ pgdn │    left    │ down │    rght    │ ent  │  \  │
+//        ├──────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼─────┐   ┌─────┼──────┼────────────┼──────┼────────────┼──────┼─────┤
+//        │      │    LCTL(z)    │    LCTL(x)    │    LCTL(c)    │    LCTL(v)    │     lgui      │     │   │     │ caps │    home    │ pscr │    end     │ del  │     │
+//        └──────┴───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼─────┤   ├─────┼──────┼────────────┼──────┼────────────┼──────┴─────┘
 //                               │               │               │               │  MO(_NUMPAD)  │ spc │   │     │      │            │      │            │
 //                               └───────────────┴───────────────┴───────────────┴───────────────┴─────┘   └─────┴──────┴────────────┴──────┴────────────┘
 [_NAVIGATION] = LAYOUT(
       KC_TRNS , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       , KC_TRNS       ,                         KC_TRNS , KC_TRNS       , KC_TRNS , KC_TRNS       , KC_TRNS , KC_TRNS,
-      KC_TRNS , KC_ESC        , LALT(KC_LEFT) , LCTL(KC_F)    , LALT(KC_RGHT) , KC_INS        ,                         KC_PGUP , LCTL(KC_LEFT) , KC_UP   , LCTL(KC_RGHT) , KC_BSPC , KC_BSPC,
-      KC_CAPS , OSM(MOD_LSFT) , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_RALT) ,                         KC_PGDN , KC_LEFT       , KC_DOWN , KC_RGHT       , KC_ENT  , KC_BSPC,
+      KC_TRNS , KC_ESC        , LALT(KC_LEFT) , LCTL(KC_F)    , LALT(KC_RGHT) , KC_INS        ,                         KC_PGUP , LCTL(KC_LEFT) , KC_UP   , LCTL(KC_RGHT) , KC_BSPC , KC_PIPE,
+      KC_CAPS , OSM(MOD_LSFT) , OSM(MOD_LGUI) , OSM(MOD_LALT) , OSM(MOD_LCTL) , OSM(MOD_RALT) ,                         KC_PGDN , KC_LEFT       , KC_DOWN , KC_RGHT       , KC_ENT  , KC_BSLS,
       KC_TRNS , LCTL(KC_Z)    , LCTL(KC_X)    , LCTL(KC_C)    , LCTL(KC_V)    , KC_LGUI       , KC_TRNS ,     KC_TRNS , KC_CAPS , KC_HOME       , KC_PSCR , KC_END        , KC_DEL  , KC_TRNS,
                                 KC_TRNS       , KC_TRNS       , KC_TRNS       , MO(_NUMPAD)   , KC_SPC  ,     KC_TRNS , KC_TRNS , KC_TRNS       , KC_TRNS , KC_TRNS
 ),

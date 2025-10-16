@@ -8,11 +8,12 @@
 #    ifdef LUNA_ENABLE
 #        include "luna.h"
 #    endif
+
 #    ifdef OCEAN_DREAM_ENABLE
 #        include "ocean_dream.h"
 #    endif
 
-#    include "config.h"
+#    include "layer.h"
 
 static void print_status_narrow(void) {
     // Print current mode
