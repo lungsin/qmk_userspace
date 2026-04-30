@@ -6,5 +6,4 @@ enum layers {
     _SYMBOL,
     _NAVIGATION,
     _NUMPAD,
-    _FN,
 };

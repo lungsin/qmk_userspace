@@ -47,9 +47,6 @@ static void print_status_narrow(void) {
         case _NUMPAD:
             oled_write_P(PSTR("Num"), false);
             break;
-        case _FN:
-            oled_write_P(PSTR("Fn"), false);
-            break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
     }
