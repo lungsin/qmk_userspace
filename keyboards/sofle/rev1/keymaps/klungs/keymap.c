@@ -15,15 +15,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //        ├──────┼───┼──────┼──────┼──────┼─────────────┤                    ├─────────────────┼─────┼──────┼──────┼───┼───────────┤
 //        │ esc  │ s │  t   │  r   │  d   │      b      │                    │        m        │  l  │  e   │  a   │ i │     /     │
 //        ├──────┼───┼──────┼──────┼──────┼─────────────┼──────┐   ┌─────────┼─────────────────┼─────┼──────┼──────┼───┼───────────┤
-//        │ lsft │ v │  z   │  x   │  c   │      p      │ mute │   │ QK_BOOT │        ,        │  h  │  '   │  q   │ ; │     \     │
+//        │ lsft │ v │  z   │  x   │  c   │      p      │ mute │   │ QK_BOOT │        ,        │  h  │  '   │  q   │ ; │ RSFT_T(\) │
 //        └──────┴───┼──────┼──────┼──────┼─────────────┼──────┤   ├─────────┼─────────────────┼─────┼──────┼──────┼───┴───────────┘
 //                   │ lgui │ lalt │ lctl │ MO(_SYMBOL) │ spc  │   │   spc   │ MO(_NAVIGATION) │ ent │ ralt │ rgui │
 //                   └──────┴──────┴──────┴─────────────┴──────┘   └─────────┴─────────────────┴─────┴──────┴──────┘
 [_KLUNGSMAK] = LAYOUT(
-      KC_GRV  , KC_1 , KC_2    , KC_3    , KC_4    , KC_5        ,                          KC_6            , KC_7     , KC_8    , KC_9    , KC_0    , KC_MINS     ,
-      KC_TAB  , KC_F , KC_K    , KC_N    , KC_G    , KC_W        ,                          KC_J            , KC_DOT   , KC_U    , KC_O    , KC_Y    , KC_BACKSPACE,
-      KC_ESC  , KC_S , KC_T    , KC_R    , KC_D    , KC_B        ,                          KC_M            , KC_L     , KC_E    , KC_A    , KC_I    , KC_SLASH    ,
-      KC_LSFT , KC_V , KC_Z    , KC_X    , KC_C    , KC_P        , KC_MUTE  ,     QK_BOOT , KC_COMM         , KC_H     , KC_QUOT , KC_Q    , KC_SCLN , KC_BACKSLASH,
+      KC_GRV  , KC_1 , KC_2    , KC_3    , KC_4    , KC_5        ,                          KC_6            , KC_7     , KC_8    , KC_9    , KC_0    , KC_MINS             ,
+      KC_TAB  , KC_F , KC_K    , KC_N    , KC_G    , KC_W        ,                          KC_J            , KC_DOT   , KC_U    , KC_O    , KC_Y    , KC_BACKSPACE        ,
+      KC_ESC  , KC_S , KC_T    , KC_R    , KC_D    , KC_B        ,                          KC_M            , KC_L     , KC_E    , KC_A    , KC_I    , KC_SLASH            ,
+      KC_LSFT , KC_V , KC_Z    , KC_X    , KC_C    , KC_P        , KC_MUTE  ,     QK_BOOT , KC_COMM         , KC_H     , KC_QUOT , KC_Q    , KC_SCLN , RSFT_T(KC_BACKSLASH),
                        KC_LGUI , KC_LALT , KC_LCTL , MO(_SYMBOL) , KC_SPACE ,     KC_SPC  , MO(_NAVIGATION) , KC_ENTER , KC_RALT , KC_RGUI
 ),
 
@@ -34,15 +34,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //        ├──────┼───┼──────┼──────┼──────┼─────────────┤                    ├─────────────────┼─────┼──────┼──────┼───┼───────────┤
 //        │ esc  │ a │  s   │  d   │  f   │      g      │                    │        h        │  j  │  k   │  l   │ ; │     '     │
 //        ├──────┼───┼──────┼──────┼──────┼─────────────┼──────┐   ┌─────────┼─────────────────┼─────┼──────┼──────┼───┼───────────┤
-//        │ lsft │ z │  x   │  c   │  v   │      b      │ mute │   │ QK_BOOT │        n        │  m  │  ,   │  .   │ / │     \     │
+//        │ lsft │ z │  x   │  c   │  v   │      b      │ mute │   │ QK_BOOT │        n        │  m  │  ,   │  .   │ / │ RSFT_T(\) │
 //        └──────┴───┼──────┼──────┼──────┼─────────────┼──────┤   ├─────────┼─────────────────┼─────┼──────┼──────┼───┴───────────┘
 //                   │ lgui │ lalt │ lctl │ MO(_SYMBOL) │ spc  │   │   spc   │ MO(_NAVIGATION) │ ent │ ralt │ rgui │
 //                   └──────┴──────┴──────┴─────────────┴──────┘   └─────────┴─────────────────┴─────┴──────┴──────┘
 [_QWERTY] = LAYOUT(
-      KC_GRV  , KC_1 , KC_2    , KC_3    , KC_4    , KC_5        ,                          KC_6            , KC_7     , KC_8    , KC_9    , KC_0    , KC_MINS     ,
-      KC_TAB  , KC_Q , KC_W    , KC_E    , KC_R    , KC_T        ,                          KC_Y            , KC_U     , KC_I    , KC_O    , KC_P    , KC_BACKSPACE,
-      KC_ESC  , KC_A , KC_S    , KC_D    , KC_F    , KC_G        ,                          KC_H            , KC_J     , KC_K    , KC_L    , KC_SCLN , KC_QUOT     ,
-      KC_LSFT , KC_Z , KC_X    , KC_C    , KC_V    , KC_B        , KC_MUTE  ,     QK_BOOT , KC_N            , KC_M     , KC_COMM , KC_DOT  , KC_SLSH , KC_BACKSLASH,
+      KC_GRV  , KC_1 , KC_2    , KC_3    , KC_4    , KC_5        ,                          KC_6            , KC_7     , KC_8    , KC_9    , KC_0    , KC_MINS             ,
+      KC_TAB  , KC_Q , KC_W    , KC_E    , KC_R    , KC_T        ,                          KC_Y            , KC_U     , KC_I    , KC_O    , KC_P    , KC_BACKSPACE        ,
+      KC_ESC  , KC_A , KC_S    , KC_D    , KC_F    , KC_G        ,                          KC_H            , KC_J     , KC_K    , KC_L    , KC_SCLN , KC_QUOT             ,
+      KC_LSFT , KC_Z , KC_X    , KC_C    , KC_V    , KC_B        , KC_MUTE  ,     QK_BOOT , KC_N            , KC_M     , KC_COMM , KC_DOT  , KC_SLSH , RSFT_T(KC_BACKSLASH),
                        KC_LGUI , KC_LALT , KC_LCTL , MO(_SYMBOL) , KC_SPACE ,     KC_SPC  , MO(_NAVIGATION) , KC_ENTER , KC_RALT , KC_RGUI
 ),
 
